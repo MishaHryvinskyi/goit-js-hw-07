@@ -23,7 +23,7 @@ function createListElement(galleryItems) {
 }
 
 galleryList.addEventListener('click', clickOpenModal);
-const instance = '';
+let instance = '';
 
 function clickOpenModal(event) {
     event.preventDefault();
@@ -34,7 +34,7 @@ function clickOpenModal(event) {
     window.addEventListener('keydown', onEscapePress);
     const clickOpenModal = event.target;
     const indexGalleryItems = galleryItems.findIndex(
-        option => option.description === clickOpenModal.alt
+        option => option.original === clickOpenModal.dataset.source
     );
 
     let instance = basicLightbox.create(`
